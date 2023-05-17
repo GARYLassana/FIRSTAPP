@@ -1,0 +1,24 @@
+<div class="contairer mt-3 col-md-6 offset-md-3">
+  <form [formGroup]="productFormGroup" (ngSubmit)="handleAddProduct()">
+    <div class="mb-3">
+      <label class="form-label"> Name :
+        <small *ngIf="productFormGroup.controls['name'].errors && productFormGroup.controls['name'].touched"
+          class="text-danger">{{prodService.getErrorMessage('Name', productFormGroup.controls['name'].errors)}}</small>
+      </label>
+      <input type="text" class="form-control" formControlName="name">
+    </div>
+    <div class="mb-3">
+      <label class="form-label"> Price :
+        <small *ngIf="productFormGroup.controls['price'].errors && productFormGroup.controls['price'].touched"
+          class="text-danger">{{prodService.getErrorMessage('Price',
+          productFormGroup.controls['price'].errors)}}</small>
+      </label>
+      <input type="text" class="form-control" formControlName="price">
+    </div>
+    <div class="mb-3">
+      <label class="form-label"> Promotion :</label>
+      <input type="checkbox" class="form-ckeck" formControlName="promotion">
+    </div>
+    <button [disabled]="productFormGroup.invalid" class="btn btn-info" type="submit"> Save</button>
+  </form>
+</div>

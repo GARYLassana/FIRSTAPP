@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
+      aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-between" id="navbarTogglerDemo01">
+      <a class="navbar-brand" href="#"><img src="../../assets/autovisionLogo.svg" alt=""></a>
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/admin/products">Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/admin/customers">Customers</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/admin/contacts">Contacts</a>
+        </li>
+        <li class="nav-item" style="margin-left: 150px;">
+          <a class="nav-link">{{authService.authenticatedUser!.username}}</a>
+        </li>
+        <li class="nav-item" (click)="handleLogout()">
+          <a class="btn bi bi-box-arrow-right"><i></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<router-outlet></router-outlet>
+<footer class="bg-body-tertiary text-center fixed-bottom m-0">
+  <div class="text-center p-3 footer"> © {{getYear()}} Copyright:
+    <a class="text-dark" target="_blank" href="https://karoil.fr/">Karoil</a>
+  </div>
+</footer>
